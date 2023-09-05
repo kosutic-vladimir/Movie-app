@@ -1,0 +1,32 @@
+<section class="section-hero">
+    <div class="hero">
+        <div class="hero-text-box">
+            <h1 class="heading-primary">Explore the World of Cinema</h1>
+            <p class="hero-description">Discover new movies, revisit the classics, and binge the latest series</p>
+            <p class="cta-description">Your next favorite movie or series is just a click away</p>
+            <div class="button-box">
+                <button class="browse-button" (click)="onBrowseMovies()">Browse Movies</button>
+                <button class="browse-button" (click)="OnBrowseTvSeries()">Browse TV Series</button>
+            </div>
+        </div>
+        <div class="hero-img-box">
+            <img class="hero-image" src="https://i.imgur.com/uN8yO0I.jpg" alt="">
+        </div>
+    </div>
+</section>
+<section class="section-posters">
+    <div class="carousel-wrapper">
+        <div class="carousel-content">
+          <div 
+          class="carousel-item" 
+          *ngFor="let slide of slides; let i = index" 
+          [@slideAnimation]="state">
+            <img [src]="slide.url">
+          </div>
+        </div>
+        <div class="carousel-indicators">
+          <div class="indicator" *ngFor="let slide of slides; let i = index" (click)="goToSlide(i)" [class.active]="i === currentSlide"></div>
+      </div>
+      </div>
+</section>
+         

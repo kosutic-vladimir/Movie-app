@@ -1,0 +1,17 @@
+<header class="header">
+  <nav class="main-nav">
+    <ul class="main-nav-list">
+      <li><a><img routerLink="/home" class="logo" src="https://www.nicepng.com/png/detail/436-4369539_movie-logo-film.png" alt="logo"></a></li>
+      <li routerLink="/movies" routerLinkActive="active" class="main-nav-link">Movies</li>
+      <li routerLink="/tv-series" routerLinkActive="active" class="main-nav-link">TV Series</li>
+      <div class="search-bar">
+        <form class="search-form" (ngSubmit)="onSubmit(searchForm.value)" #searchForm="ngForm">
+          <input class="search-input" ngModel name="searchQuery" type="text" placeholder="Search Movies..." />
+          <button class="search-button" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </ul>
+  </nav>
+  <!-- <a class="main-nav-link nav-cta">Login</a> -->
+</header>
+

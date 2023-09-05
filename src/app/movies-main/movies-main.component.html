@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="movie-menu">
+    <button class="movie-button" [routerLink]="['/movies/playing-now']" routerLinkActive="active" (click)="setPage()">Playing Now</button>
+    <button class="movie-button" [routerLink]="['/movies/top-rated']" routerLinkActive="active" (click)="setPage()">Top Rated</button>
+    <button class="movie-button" [routerLink]="['/movies/upcoming']" routerLinkActive="active" (click)="setPage()">Upcoming</button>
+    <div class="dropdown">
+      <button class="dropbtn">Search by Genres &#9660;</button>
+      <div class="dropdown-content">
+        <div class="list-grid">
+          <a *ngFor="let genre of genres" [routerLink]="['/movies/genre', genre.id, '1']" (click)="setPage()">{{genre.name}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <button 
+      class="page-button arrow" 
+      (click)="onPrev()">
+      <i class="icon bi bi-caret-left-fill" [class.hide]="currentPage === 1"></i>
+    </button>
+      <button
+        class="page-button" 
+        [class.page-active-btn]="page === currentPage"
+        *ngFor="let page of showPages"
+        (click)="goToPage(page)">
+        {{page}}
+      </button>
+    <button 
+      class="page-button arrow" 
+      (click)="onNext()" >
+      <i class=" icon bi bi-caret-right-fill" [class.hide]="currentPage === totalPages"></i>
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="pagination">
+    <button 
+      class="page-button arrow" 
+      (click)="onPrev()">
+      <i class="icon bi bi-caret-left-fill" [class.hide]="currentPage === 1"></i>
+    </button>
+      <button
+        class="page-button" 
+        [class.page-active-btn]="page === currentPage"
+        *ngFor="let page of showPages"
+        (click)="goToPage(page)">
+        {{page}}
+      </button>
+    <button 
+      class="page-button arrow" 
+      (click)="onNext()" >
+      <i class=" icon bi bi-caret-right-fill" [class.hide]="currentPage === totalPages"></i>
+    </button>
+  </div>
+</div>

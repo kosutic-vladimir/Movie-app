@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="overview-box" *ngIf="movieDetailsData">
+    <div class="overview-main-box">
+      <div class="main-content-box">
+        <p class="main-content-title">{{movieDetailsData.title}}</p>
+        <p class="main-content-tagline">{{movieDetailsData.tagline}}</p>
+        <p class="main-content-secondary">Genres</p>
+        <span class="main-content-tertiary" *ngFor="let genre of movieDetailsData.genres">{{genre.name + ', '}}</span>
+        <p class="main-content-rating">Rating</p>
+        <span class="main-content-tertiary">Average: <strong>{{movieDetailsData.vote_average | number: '1.1-1' }}</strong> </span>
+        <p class="main-content-votes">Votes: {{movieDetailsData.vote_count}}</p>
+      </div>
+      <div class="main-image-box">
+        <img [src]="getBackdropImage(movieDetailsData.backdrop_path)" alt="{{movieDetailsData.title}}">
+      </div>
+    </div>
+    <div class="overview-content-box">
+      <p class="heading-secondary">Synopsis</p>
+      <p class="text-block">{{movieDetailsData.overview}}</p>
+      <p class="heading-secondary">Details</p>
+      <div class="details-box">
+        <div class="details-box-1">
+          <p class="main-content-tertiary">Release date: <strong>{{movieDetailsData.release_date | euDateFormat}}</strong></p>
+          <p class="main-content-tertiary">Runtime: <strong>{{movieDetailsData.runtime }}</strong> minutes</p>
+          <p class="main-content-tertiary">Budget: {{movieDetailsData.budget | numberPipe}} $</p>
+          <p class="main-content-tertiary">Revenue: {{movieDetailsData.revenue | numberPipe}} $</p>
+        </div>
+        <div class="details-box-2">
+          <a class="link" [href]="movieDetailsData.homepage" target="_blank">{{movieDetailsData.homepage}}</a>
+          <a class="link" [href]="'https://www.imdb.com/title/' + movieDetailsData.imdb_id" target="_blank">View on IMDb</a>
+        </div>
+      </div>
+        <p class="show-reviews" (click)="onShowReviews()">{{showReviews ? 'Hide Reviews' : 'Show Reviews' }}
+          <span [innerHTML]="showReviews ? ' &uarr;' : ' &darr;'"></span>
+        </p>
+        <div *ngIf="showReviews"  #reviewSection>
+          <ng-container *ngIf="reviewData.length > 0 && showReviews; else noReviews">
+            <div class="review-box">
+              <div class="review-info-box">
+                <div class="review-info" *ngFor="let review of reviewData">
+                  <p class="review-author">{{review.author}}</p>
+                  <ng-container *ngIf="review.content.length > threshold; else shortReview">
+                    <div class="accordion">
+                      <p class="review-content">{{isExpanded ? review.content : (review.content | slice:0:threshold) + '...'}}</p>
+                      <div class="accordion-header" (click)="toggleAccordion()">
+                              {{isExpanded ? 'Show Less' : 'Read More'}}
+                      </div>
+                    </div>
+                  </ng-container>
+                  <ng-template #shortReview>
+                      <p class="review-content">{{review.content}}</p>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #noReviews>
+            <p class="noReviewsMessage">{{noReviewsMessage}}</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+        

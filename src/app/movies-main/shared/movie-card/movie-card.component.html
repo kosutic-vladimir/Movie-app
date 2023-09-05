@@ -1,0 +1,10 @@
+<div class="movie-card" (click)="goToOverview(movieCardData.id)">
+    <img class="movie-card-img" [src]="getPosterImage(movieCardData.poster_path)" alt="Poster Image">
+    <div class="show-more-text">Show More</div>
+    <div class="movie-card-content">
+        <p class="movie-card-text">{{ movieCardData.title }}</p>
+    </div>   
+</div>
+<div class="button-wrap">
+    <button class="movie-card-button" (click)="OnWatchTrailer(movieCardData.title)">Watch Trailer</button>
+</div>

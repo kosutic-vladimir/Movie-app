@@ -1,0 +1,9 @@
+<div class="card-box">
+  <div class="image-box">
+    <img [src]="getPosterUrl()" alt="{{tvCardData.name}}">
+  </div>
+  <div class="content-box">
+    <p class="content-name">{{tvCardData.name}}</p>
+    <p class="content-overview">{{getFirstSentence(tvCardData.overview)}}</p>
+  </div>    
+</div>

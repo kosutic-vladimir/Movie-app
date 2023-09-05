@@ -1,0 +1,114 @@
+.section-hero {
+    background-color: rgb(234, 247, 251);
+    padding: 4.8rem 9.6rem ;
+  
+}
+
+.hero {
+    max-width: 150rem;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+    display: grid;
+    gap: 9.6rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.heading-primary {
+    font-size: 6.2rem;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 3.2rem;
+    color: #212529;
+    font-weight: 700;
+}
+
+
+.hero-description {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 5.2rem;
+}
+
+.cta-description {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 2.8rem;
+}
+
+.button-box {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.browse-button {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1.2rem 2.4rem;
+    border-color: #0056b3;
+    color: #0056b3;
+    background-color: white;
+    border-radius: 11px;
+    transition: all 0.3s;
+}
+
+.browse-button:hover, .browse-button:active {
+    cursor: pointer;
+    color: white;
+    background-color: #007bff;
+}
+
+.section-posters {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 120rem;
+    height: fit-content;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carousel-content {
+    display: flex;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+}
+
+.indicator {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: transparent;
+    border: 2px solid white; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: white;
+}
+  
+  
+  
+  

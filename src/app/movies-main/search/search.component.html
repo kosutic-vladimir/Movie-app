@@ -1,0 +1,8 @@
+<div class="container">
+    <div *ngIf="searchMoviesData">
+        <h1>There are no results for this query. Please try another one.</h1>
+    </div>
+    <div class="movie-grid">
+        <app-movie-card *ngFor="let movieCardData of searchMoviesData" [movieCardData]="movieCardData"></app-movie-card>
+    </div>  
+</div>

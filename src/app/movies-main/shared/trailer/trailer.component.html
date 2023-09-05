@@ -1,0 +1,12 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="trailer-box">
+    <iframe
+    width="560"
+    height="315"
+    [src]="trailerUrl"
+    frameborder="0"
+    allowfullscreen
+    >
+    </iframe>
+    <button class="close-button" (click)="onClose()">✕</button>
+</div>

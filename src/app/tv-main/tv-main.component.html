@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="tv-menu">
+    <button class="tv-button" [routerLink]="['/tv-series/popular']" routerLinkActive="active" (click)="setPage()">Popular</button>
+    <button class="tv-button" [routerLink]="['/tv-series/top-rated']" routerLinkActive="active" (click)="setPage()">Top Rated</button>
+    <button class="tv-button" [routerLink]="['/tv-series/on-the-air']" routerLinkActive="active" (click)="setPage()">On The Air</button>
+  </div>
+  <div class="pagination">
+    <button 
+      class="page-button arrow" 
+      (click)="onPrev()">
+      <i class="icon bi bi-caret-left-fill" [class.hide]="currentPage === 1"></i>
+    </button>
+      <button
+        class="page-button" 
+        [class.page-active-btn]="page === currentPage"
+        (click)="goToPage(page)" 
+        *ngFor="let page of showPages">
+        {{page}}
+      </button>
+    <button 
+      class="page-button arrow" 
+      (click)="onNext()" >
+      <i class=" icon bi bi-caret-right-fill" [class.hide]="currentPage === totalPages"></i>
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="pagination">
+    <button 
+      class="page-button arrow" 
+      (click)="onPrev()">
+      <i class="icon bi bi-caret-left-fill" [class.hide]="currentPage === 1"></i>
+    </button>
+      <button
+        class="page-button" 
+        [class.page-active-btn]="page === currentPage"
+        (click)="goToPage(page)" 
+        *ngFor="let page of showPages">
+        {{page}}
+      </button>
+    <button 
+      class="page-button arrow" 
+      (click)="onNext()" >
+      <i class=" icon bi bi-caret-right-fill" [class.hide]="currentPage === totalPages"></i>
+    </button>
+  </div>
+</div>

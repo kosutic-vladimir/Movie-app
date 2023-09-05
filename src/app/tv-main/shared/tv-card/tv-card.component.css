@@ -1,0 +1,19 @@
+.card-box {
+    display: flex;
+}
+
+.content-box {
+    padding: 1.2rem;
+    padding: 2.4rem;
+}
+
+.content-name {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.content-overview {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
