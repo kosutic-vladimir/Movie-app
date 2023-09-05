@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This is a small aplication for movies and tv shows that uses TMBD api.
 It is made for coding practicing purposes , no comercial use.
-At this moment it is about 40% done.
+At this moment it is about 60% done.
 
 # Features
 
