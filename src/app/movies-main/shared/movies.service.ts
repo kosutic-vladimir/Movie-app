@@ -7,8 +7,8 @@ import { map } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class MoviesService {
-    private apiKey = '8e14c69691252552379ed2d6518ab638';
-    private youtubeApiKey = 'AIzaSyBFFjrxPwTsaQ1rz8w37-YI_CFiDzLFtGc';
+    private apiKey = '';
+    private youtubeApiKey = '';
     private baseUrl = 'https://api.themoviedb.org/3';
 
     constructor(private http: HttpClient) {}
