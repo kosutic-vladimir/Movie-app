@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'root'})
 export class TvSeriesService {
     private baseUrl = 'https://api.themoviedb.org/3';
-    private apiKey = '8e14c69691252552379ed2d6518ab638';
+    private apiKey = '';
 
     constructor(private http: HttpClient) {}
 
